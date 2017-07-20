@@ -1,0 +1,30 @@
+<div class="appInfo">
+    <div class="videoDemoWrapper">
+        <div class="video{{app.appNumber}} videoArea" ng-show="app.appFlag" >
+            <video controls>
+                <source ng-src="video/{{app.appSrc}}.ogv" type='video/ogg; codecs="theora, vorbis"'>
+                <source ng-src="video/{{app.appSrc}}.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                <source ng-src="video/{{app.appSrc}}.webm" type='video/webm; codecs="vp8, vorbis"'>
+                <span ng-if="!flag_EN">Тег video не поддерживается вашим браузером. <a href="video/{{app.appSrc}}.mp4">Скачайте видео</a></span>
+                <span ng-if="flag_EN">Your browser does not support the "video" tag. <a href="video/{{app.appSrc}}.mp4">You can download the video</a></span>
+            </video>
+        </div>
+    </div>
+    <div class="appDescription">
+        <h1 ng-if="!flag_EN">{{app.appName}}</h1>
+        <h1 ng-if="flag_EN">{{app.appNameEN}}</h1>
+        <p ng-if="!flag_EN">{{app.appDescription}}</p>
+        <p ng-if="flag_EN">{{app.appDescriptionEN}}</p>
+    </div>
+    <div class="imgDemo">
+        <a href="" ng-click="showVideo(app.appNumber)">
+            <img ng-src="images/{{app.appSmallImgSrc}}.jpg" width="550" height="400">
+            <div class="playIcon"></div>
+        </a>
+    </div>
+    <div class="video-sm" >
+        <a href="" ng-click="showVideo(app.appNumber)">
+            <img src="images/icons/videoIcon.png" width="60">
+        </a>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Apps Exapmles</title>
+    <meta name="description" content="examples of applications">
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="images/icons/heart_ico.png" />
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" type="text/css" href="fullPage/jquery.fullPage.css" />
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="fullPage/jquery.fullPage.js"></script>
+    <script>
+      $(window).on('load', function () {
+          var $preloader = $('#page-preloader'),
+              $spinner   = $preloader.find('.spinner');
+          $spinner.fadeOut();
+          $preloader.delay(400).fadeOut('slow');
+      });
+    </script>
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body ng-controller="mainController">
+    <div id="page-preloader"><span class="spinner"></span></div>
+    <div id="nav">
+        <ul class="menu-sm">
+            <li ng-if="!flag_EN"><a href="" ng-click="showMenu()">Меню</a></li>
+            <li ng-if="flag_EN"><a href="" ng-click="showMenu()">Menu</a></li>
+            <li><a href="" ng-click="changeLang()" ng-class="{activeLang: !flag_EN}">RU</a></li>
+            <li><a href="" ng-click="changeLang()" ng-class="{activeLang: flag_EN}">EN</a></li>
+        </ul>
+        <ul class="menu-md">
+            <li ng-if="!flag_EN"><a href="#About">О сайте</a></li>
+            <li ng-if="flag_EN"><a href="#About">About</a></li>
+            <li ng-if="!flag_EN"><a href="#DemoSlider">Демо-слайдер</a></li>
+            <li ng-if="flag_EN"><a href="#DemoSlider">Demo Slider</a></li>
+            <li ng-if="!flag_EN"><a href="#CalculatorApp">Калькулятор</a></li>
+            <li ng-if="flag_EN"><a href="#CalculatorApp">Calculator App</a></li>
+            <li ng-if="!flag_EN"><a href="#StickyNotesApp">Заметки</a></li>
+            <li ng-if="flag_EN"><a href="#StickyNotesApp">Sticky Notes App</a></li>
+            <li ng-if="!flag_EN"><a href="#CurrencyConverterApp">Конвертер валют</a></li>
+            <li ng-if="flag_EN"><a href="#CurrencyConverterApp">Currency Converter App</a></li>
+            <li ng-if="!flag_EN"><a href="#RecipeKeeperApp">Кулинарная книга</a></li>
+            <li ng-if="flag_EN"><a href="#RecipeKeeperApp">Recipe Keeper App</a></li>
+            <li ng-if="!flag_EN"><a href="#CaloriesCalculatorApp">Калькулятор калорий</a></li>
+            <li ng-if="flag_EN"><a href="#CaloriesCalculatorApp">Calories Calculator App</a></li>
+            <li><a href="" ng-click="changeLang()" ng-class="{activeLang: flag_EN}">EN</a></li>
+            <li><a href="" ng-click="changeLang()" ng-class="{activeLang: !flag_EN}">RU</a></li>
+            <li ng-if="!flag_EN"><a href="#Contacts">Контакты</a></li>
+            <li ng-if="flag_EN"><a href="#Contacts">Contact me</a></li>
+        </ul>
+    </div>
+    <a href="#About"><div class="scrollToTopBtn" ng-show="flag_scrollToTopBtn"><img src="images/icons/slideUp.png"></div></a>
+    <div id="fullpage">
+        <div class="section headerSection {{bgColor}}">
+            <div class="headerSectionWrapper">
+                <div class="headerInfo">
+                    <div class="photo"><img src="images/photo.JPG"></div>
+                    <h1 ng-if="flag_EN">Hello, my name is Yulia</h1>
+                    <h2 ng-if="!flag_EN">Добрый день, меня зовут Юлия</h2>
+                    <h3 ng-if="flag_EN">Examples of creating my Applications can be seen below</h3>
+                    <h3 ng-if="!flag_EN">Ниже Вы сможете увидеть примеры созданных приложений</h3>
+                    <br>
+                    <span class="label label-default langLabel" ng-repeat="lang in usingLangArr">{{lang}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="section {{bgColor}}">
+            <div class="moveSlideLeftArrow" ng-click="moveSlideLeft()"></div>
+            <div class="moveSlideRightArrow" ng-click="moveSlideRight()"></div>
+            <div class="slide"><div class="slideSettings"><a href="#CalculatorApp"><img src="images/slide/calculatorAppDemoSlide.jpg"></a></div></div>
+            <div class="slide"><div class="slideSettings"><a href="#StickyNotesApp"><img ng-src="images/slide/stickyNotesAppDemoSlide.jpg"></a></div></div>
+            <div class="slide"><div class="slideSettings"><a href="#CurrencyConverterApp"><img ng-src="images/slide/currencyConverterAppDemoSlide.jpg"></a></div></div>
+            <div class="slide"><div class="slideSettings"><a href="#RecipeKeeperApp"><img ng-src="images/slide/recipeKeeperAppDemoSlide_1.jpg"></a></div></div>
+            <div class="slide"><div class="slideSettings"><a href="#RecipeKeeperApp"><img ng-src="images/slide/recipeKeeperAppDemoSlide_2.jpg"></a></div></div>
+            <div class="slide"><div class="slideSettings"><a href="#RecipeKeeperApp"><img ng-src="images/slide/recipeKeeperAppDemoSlide_3.jpg"></a></div></div>
+            <div class="slide"><div class="slideSettings"><a href="#RecipeKeeperApp"><img ng-src="images/slide/recipeKeeperAppDemoSlide_4.jpg"></a></div></div>
+            <div class="slide"><div class="slideSettings"><a href="#RecipeKeeperApp"><img ng-src="images/slide/recipeKeeperAppDemoSlide_5.jpg"></a></div></div>
+            <div class="slide"><div class="slideSettings"><a href="#CaloriesCalculatorApp"><img ng-src="images/slide/caloriesCalculatorAppDemoSlide_1.jpg"></a></div></div>
+            <div class="slide"><div class="slideSettings"><a href="#CaloriesCalculatorApp"><img ng-src="images/slide/caloriesCalculatorAppDemoSlide_2.jpg"></a></div></div>
+        </div>
+        <div class="section {{bgColor}}" ng-repeat="app in appInfoArr">
+            <div ng-if="app.appNumber == 1">
+                <div class="motion-item motion-1"></div>
+                <div class="motion-item motion-2"></div>
+                <div class="motion-item motion-3"></div>
+            </div>
+            <app-Demo></app-Demo>
+        </div>
+        <div class="section contactsSection {{bgColor}}">
+            <div class="contactsInfoWrapper">
+                <div class="contactsInfo">
+                    <h1 ng-if="flag_EN">Yulia Levanovich</h1>
+                    <h1 ng-if="!flag_EN">Юлия Леванович</h1>
+                    <h2 ng-if="!flag_EN">Контакты</h2>
+                    <h2 ng-if="flag_EN">Contact me</h2>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <div class="contactsImg"><img src="images/icons/marker.png" width="40"></div>
+                            <span ng-if="!flag_EN">Минск, Беларусь</span>
+                            <span ng-if="flag_EN">Minsk, Belarus</span>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <div class="contactsImg"><img src="images/icons/message.png" width="40"></div>
+                            <span>levanovich.y@gmail.com</span>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                            <div class="contactsImg"><img src="images/icons/phone.png" width="40"></div>
+                            <span>+375.29.3996133</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="social">
+                    <a class="socialImg socialLI" href="https://www.linkedin.com/in/%D1%8E%D0%BB%D0%B8%D1%8F-%D0%BB%D0%B5%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%87-65907066/" target="_blank"></a>
+                    <a class="socialImg socialFB" href="https://www.facebook.com/yulia.podlipko" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="Services/Constants/appInfoConstant.js"></script>
+  <script src="Controllers/mainController.js"></script>
+  <script src="Directives/appDemoDirective.js"></script>
+</body>
+</html>
+
+<!--
+  CREDITS:
+  Plug-ins: fullPage by Alvaro Trigo (alvaro@alvarotrigo.com)
+-->
