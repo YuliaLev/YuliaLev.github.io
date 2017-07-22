@@ -75,7 +75,7 @@ app.controller('mainController', function ($scope, $anchorScroll, appInfoConstan
                 }
                 if(index == 1){
                     $scope.flag_scrollToTopBtn = true;
-                    $(".scrollToTopBtn").animate({opacity:'.65'}, 1000);
+                    $(".scrollToTopBtn").animate({opacity:'1'}, 1000);
                 }
                 if((index == 2 || index == 4 || index == 8 || index == 3 || index == 5 || index == 6 || index == 7) && nextIndex == 1) {
                     $(".scrollToTopBtn").animate({opacity: '0'}, 1000);
@@ -103,12 +103,12 @@ app.controller('mainController', function ($scope, $anchorScroll, appInfoConstan
                 if((index == 1 || index == 2 || index == 3 || index == 4 || index == 5 || index == 6 || index == 7) && nextIndex == 8){
                     $scope.bgColor = 'bg7';
                     $('.contactsInfoWrapper').animate({
-                        top: '-=30%'
+                        top: '-=30vh'
                     }, 1000);
                 }
                 if(index == 8){
                     $('.contactsInfoWrapper').animate({
-                        top: '+=30%'
+                        top: '+=30vh'
                     }, 1000);
                 }
             },
