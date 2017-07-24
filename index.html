@@ -31,8 +31,8 @@
         <ul class="menu-sm">
             <li ng-if="!flag_EN"><a href="" ng-click="showMenu()">Меню</a></li>
             <li ng-if="flag_EN"><a href="" ng-click="showMenu()">Menu</a></li>
-            <li><a href="" ng-click="changeLang()" ng-class="{activeLang: !flag_EN}">RU</a></li>
-            <li><a href="" ng-click="changeLang()" ng-class="{activeLang: flag_EN}">EN</a></li>
+            <li><a href="" ng-click="changeLangToRU()" ng-class="{activeLang: !flag_EN}">RU</a></li>
+            <li><a href="" ng-click="changeLangToEN()" ng-class="{activeLang: flag_EN}">EN</a></li>
         </ul>
         <ul class="menu-md">
             <li ng-if="!flag_EN"><a href="#About">О сайте</a></li>
@@ -49,8 +49,8 @@
             <li ng-if="flag_EN"><a href="#RecipeKeeperApp">Recipe Keeper App</a></li>
             <li ng-if="!flag_EN"><a href="#CaloriesCalculatorApp">Калькулятор калорий</a></li>
             <li ng-if="flag_EN"><a href="#CaloriesCalculatorApp">Calories Calculator App</a></li>
-            <li><a href="" ng-click="changeLang()" ng-class="{activeLang: flag_EN}">EN</a></li>
-            <li><a href="" ng-click="changeLang()" ng-class="{activeLang: !flag_EN}">RU</a></li>
+            <li><a href="" ng-click="changeLangToEN()" ng-class="{activeLang: flag_EN}">EN</a></li>
+            <li><a href="" ng-click="changeLangToRU()" ng-class="{activeLang: !flag_EN}">RU</a></li>
             <li ng-if="!flag_EN"><a href="#Contacts">Контакты</a></li>
             <li ng-if="flag_EN"><a href="#Contacts">Contact me</a></li>
         </ul>

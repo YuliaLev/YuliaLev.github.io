@@ -7,8 +7,16 @@ app.controller('mainController', function ($scope, $anchorScroll, appInfoConstan
     $scope.appInfoArr = appInfoConstant;
     $scope.usingLangArr = ['HTML5', 'CSS3', 'JavaScript', 'AngularJS', 'Bootstrap', 'Less', 'jQuery', 'APIs', 'NodeJS', 'other'];
 
-    $scope.changeLang = function () {
-        $scope.flag_EN = !$scope.flag_EN;
+    $scope.changeLangToEN = function () {
+        if(!$scope.flag_EN) {
+            $scope.flag_EN = true;
+        }
+    };
+
+    $scope.changeLangToRU = function (){
+        if($scope.flag_EN) {
+            $scope.flag_EN = false;
+        }
     };
 
     $scope.showMenu = function () {

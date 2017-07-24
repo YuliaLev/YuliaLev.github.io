@@ -17,7 +17,7 @@ body {
     position: absolute;
     z-index: 500;
     background: #222;
-    opacity: .7;
+    opacity: .8;
 }
 #nav ul {
     margin-bottom: 0;
@@ -582,6 +582,9 @@ a.socialImg {
         background: rgba(22,22,22,.1);
         padding: 15px;
     }
+    .appDescriptionHeight {
+        height: 360px;
+    }
 }
 
 @media (max-width: 620px ){
@@ -735,6 +738,9 @@ a.socialImg {
         height: 130px;
         border-radius: 130px;
     }
+    .appDescriptionHeight {
+        height: 370px;
+    }
 }
 
 @media (max-width: 420px ){
@@ -783,6 +789,9 @@ a.socialImg {
     .appDescription {
         width: 320px;
     }
+    .appDescriptionHeight {
+        height: 405px;
+    }
 }
 
 @media (max-width: 374px ){
@@ -814,9 +823,13 @@ a.socialImg {
     }
     .appDescription {
         width: 290px;
+        height: 360px;
     }
     .contactsInfo, .headerInfo {
         width: 290px;
+    }
+    .appDescriptionHeight {
+        height: 437px;
     }
 }
 
@@ -849,6 +862,9 @@ a.socialImg {
     }
     .video5 .videoDemoWrapper video, .video5 {
         height: 162px;
+    }
+    .appDescriptionHeight {
+        height: 446px;
     }
 }
 

@@ -10,7 +10,7 @@
             </video>
         </div>
     </div>
-    <div class="appDescription">
+    <div class="appDescription" ng-class="{'appDescriptionHeight': !flag_EN && app.appNumber == 4}">
         <h1 ng-if="!flag_EN">{{app.appName}}</h1>
         <h1 ng-if="flag_EN">{{app.appNameEN}}</h1>
         <p ng-if="!flag_EN">{{app.appDescription}}</p>
